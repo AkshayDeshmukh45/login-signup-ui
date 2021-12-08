@@ -1,0 +1,28 @@
+
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+body {
+    background-color: rgb(132, 0, 158);
+}
+
+.form-group{
+    width: 25vw;
+    margin-top: 1.25rem;
+    font-family: sans-serif;
+    font-size:1rem;
+    align-items: flex-start;
+    margin-left: 7rem;
+}
+.left{
+    background-color: rgba(1, 148, 216,0.5);
+   width:70%;
+   height: 35rem;
+   margin-top: 0%;
+   margin-left: 5vw;
+   display: flex;
+   justify-content: flex-end;
+   align-items: end;
+}
