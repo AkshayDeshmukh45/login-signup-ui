@@ -9,7 +9,6 @@ import Home from "./Home.js";
 function App() {
   return (
     <>
- 
     <Login />
     < Home />
     <Signup />

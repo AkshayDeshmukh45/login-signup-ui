@@ -1,16 +1,45 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Signup.css";
+import Login from "./Login.js";
 // import {AppleOutlined,AndroidOutlined } from 'antd/dist/antd.css';
 function Signup() {
+
+    const [email, setEmail] = useState(" ");
+    const [passLog, setPassLog] = useState(" ");
+
+    const [flag, setFlag] = useState(false);
+
+    const [home, setHome] = useState(true);
+
+
+    function handleLogin(e) {
+        e.preventDefault();
+        let pass = localStorage.getItem(("user").JSON.parse(passLog));
+        console.log(pass);
+        let mail = localStorage.getItem(("user").JSON.parse(email));
+    console.log(mail);
+        
+
+        if (!email || !passLog) {
+            setFlag(true);
+            console.log("EMPTY");
+        } else if ((passLog !== pass) || (email !== mail)) {
+            setFlag(true);
+        } else {
+            setHome(!home);
+            setFlag(false);
+        }
+    }
+
   return (
     <>
-      <section className="Form">
+      <form onSubmit={handleLogin} className="Form">
         <div className="main">
           <div className="container"></div>
           <div className="form-field">
             <div className="signup-header">
               <h3 style={{color: 'white',fontSize: "18px", marginLeft: "20px" }}>
-                Sign Up Now
+                Log In Now
               </h3>
             </div>
             <div className="input-field">
@@ -20,6 +49,7 @@ function Signup() {
                 className="form-control"
                 autocomplete="off"
                 placeholder=" User Name"
+                onChange={(event) => setEmail(event.target.value)}
               />
               <br></br>
 
@@ -30,6 +60,8 @@ function Signup() {
                 autocomplete="off"
                 placeholder="Email"
                 required
+                onChange={(event) => setEmail(event.target.value)}
+                
               />
 
               <br />
@@ -41,14 +73,15 @@ function Signup() {
                 autocomplete="off"
                 placeholder="Password"
                 required
+                onChange={(event) => setPassLog(event.target.value)}
               />
               <br />
               <button
                 style={{ width: "100%" }}
-                type="button"
+                 type="submit"
                 class="btn btn-secondary btn-lg"
               >
-                Sign Up
+                Login
               </button>
             </div>
 
@@ -58,7 +91,7 @@ function Signup() {
           
           </div>
         </div>
-      </section>
+      </form>
     </>
   );
 }

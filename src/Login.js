@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
 
 function Login() {
@@ -10,8 +10,9 @@ function Login() {
   });
   const [userRecord, setUserRecord] = useState([]);
 
-  const store = localStorage.setItem("user", JSON.stringify(user));
-  console.log(store);
+ const store = localStorage.setItem("user",JSON.stringify(user));
+
+console.log(useEffect);
 
   const handleInput = (input) => {
     const name = input.target.name;
@@ -120,7 +121,7 @@ function Login() {
           );
         })}
       </div>
-      {store}
+      
      
     </>
   );
